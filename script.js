@@ -253,17 +253,7 @@ const soalList = [
   }
 ];
 
-/* ================================
-   TAMBAHAN SOAL OTOMATIS (SAMPAI 100)
-================================= */
-for (let i = soalList.length + 1; i <= 100; i++) {
-  soalList.push({
-    soal: `Jika sebuah pohon memiliki ${i} simpul, berapa jumlah sisinya?`,
-    pilihan: [`${i - 2}`, `${i - 1}`, `${i}`, `${i + 1}`],
-    benar: 1,
-    alasan: "Jumlah sisi pohon selalu n − 1."
-  });
-}
+
 
 /* ================================
    VARIABEL GLOBAL
