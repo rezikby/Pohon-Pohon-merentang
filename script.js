@@ -101,7 +101,7 @@ function cekPohonMerentang() {
 }
 
 /* ================================
-   DATA SOAL
+   DATA SOAL (100 SOAL BERVARIASI)
 ================================= */
 const soalList = [
   {
@@ -114,31 +114,84 @@ const soalList = [
     soal: "Jumlah sisi pada pohon dengan n simpul adalah?",
     pilihan: ["n", "n + 1", "n - 1", "2n"],
     benar: 2,
-    alasan: "Pohon selalu memiliki n − 1 sisi."
+    alasan: "Ciri utama pohon adalah memiliki n − 1 sisi."
   },
   {
     soal: "Graf tanpa siklus disebut?",
-    pilihan: ["Graf siklik", "Graf asiklik", "Graf lengkap", "Graf planar"],
+    pilihan: ["Siklik", "Asiklik", "Lengkap", "Planar"],
     benar: 1,
     alasan: "Graf tanpa siklus disebut graf asiklik."
   },
   {
-    soal: "Pohon selalu bersifat?",
-    pilihan: ["Terputus", "Terhubung", "Berarah", "Berbobot"],
+    soal: "Syarat utama graf disebut pohon adalah?",
+    pilihan: [
+      "Berarah dan lengkap",
+      "Terhubung dan tanpa siklus",
+      "Memiliki bobot",
+      "Derajat sama"
+    ],
     benar: 1,
-    alasan: "Pohon harus terhubung."
+    alasan: "Pohon harus terhubung dan tidak mengandung siklus."
   },
   {
-    soal: "Jika graf memiliki 6 simpul, berapa jumlah sisi pada pohon?",
-    pilihan: ["4", "5", "6", "7"],
+    soal: "Jika sebuah pohon memiliki 8 simpul, maka jumlah sisinya adalah?",
+    pilihan: ["6", "7", "8", "9"],
     benar: 1,
-    alasan: "n − 1 = 6 − 1 = 5."
+    alasan: "Jumlah sisi pohon = n − 1."
   },
   {
-    soal: "Pohon merentang harus mencakup?",
-    pilihan: ["Sebagian simpul", "Semua simpul", "Satu simpul", "Tidak ada simpul"],
+    soal: "Pohon merentang adalah?",
+    pilihan: [
+      "Graf lengkap",
+      "Subgraf yang mencakup semua simpul tanpa siklus",
+      "Graf berarah",
+      "Graf berbobot"
+    ],
     benar: 1,
-    alasan: "Pohon merentang mencakup semua simpul graf."
+    alasan: "Pohon merentang mencakup semua simpul graf asal."
+  },
+  {
+    soal: "Apakah pohon boleh memiliki loop?",
+    pilihan: ["Boleh", "Tidak boleh", "Kadang-kadang", "Tergantung simpul"],
+    benar: 1,
+    alasan: "Loop membentuk siklus sehingga tidak boleh."
+  },
+  {
+    soal: "Graf dengan satu simpul dan tanpa sisi disebut?",
+    pilihan: ["Graf kosong", "Graf trivial", "Graf lengkap", "Graf siklik"],
+    benar: 1,
+    alasan: "Graf trivial terdiri dari satu simpul."
+  },
+  {
+    soal: "Simpul dengan derajat 1 pada pohon disebut?",
+    pilihan: ["Akar", "Cabang", "Daun", "Induk"],
+    benar: 2,
+    alasan: "Simpul berderajat satu disebut daun."
+  },
+  {
+    soal: "Graf terhubung dengan n simpul dan n − 1 sisi pasti?",
+    pilihan: ["Graf siklik", "Pohon", "Graf lengkap", "Graf planar"],
+    benar: 1,
+    alasan: "Itu adalah definisi pohon."
+  },
+
+  // ===== SOAL LOGIKA & KONSEP =====
+  {
+    soal: "Jika sebuah graf memiliki lebih dari n − 1 sisi, maka graf tersebut?",
+    pilihan: [
+      "Pohon",
+      "Tidak terhubung",
+      "Memiliki siklus",
+      "Graf trivial"
+    ],
+    benar: 2,
+    alasan: "Lebih dari n − 1 sisi berarti ada siklus."
+  },
+  {
+    soal: "Apakah setiap graf terhubung memiliki pohon merentang?",
+    pilihan: ["Ya", "Tidak", "Hanya graf lengkap", "Hanya graf kecil"],
+    benar: 0,
+    alasan: "Setiap graf terhubung pasti memiliki pohon merentang."
   },
   {
     soal: "Pohon merupakan graf?",
@@ -147,102 +200,73 @@ const soalList = [
     alasan: "Pohon adalah graf tak berarah."
   },
   {
-    soal: "Apakah pohon boleh memiliki siklus?",
-    pilihan: ["Boleh", "Tidak boleh", "Kadang-kadang", "Tergantung sisi"],
+    soal: "Jika sebuah graf tidak terhubung, maka?",
+    pilihan: [
+      "Memiliki pohon merentang",
+      "Tidak memiliki pohon merentang",
+      "Pasti pohon",
+      "Graf lengkap"
+    ],
     benar: 1,
-    alasan: "Pohon tidak boleh memiliki siklus."
+    alasan: "Graf tidak terhubung tidak punya pohon merentang."
   },
   {
-    soal: "Graf dengan satu simpul dan tanpa sisi disebut?",
-    pilihan: ["Graf kosong", "Graf trivial", "Graf lengkap", "Graf siklik"],
-    benar: 1,
-    alasan: "Graf trivial merupakan pohon."
-  },
-  {
-    soal: "Pohon merentang merupakan subgraf dari graf?",
-    pilihan: ["Tak berarah", "Berarah", "Lengkap", "Berbobot"],
-    benar: 0,
-    alasan: "Pohon merentang adalah subgraf tak berarah."
-  },
-
-  // ====== 11 – 100 ======
-  {
-    soal: "Jika sebuah pohon memiliki 10 simpul, maka jumlah sisinya adalah?",
-    pilihan: ["8", "9", "10", "11"],
-    benar: 1,
-    alasan: "Jumlah sisi pohon = n − 1."
-  },
-  {
-    soal: "Graf yang memiliki siklus pasti?",
-    pilihan: ["Pohon", "Bukan pohon", "Pohon merentang", "Graf trivial"],
-    benar: 1,
-    alasan: "Pohon tidak boleh memiliki siklus."
-  },
-  {
-    soal: "Pohon merentang tidak boleh memiliki?",
-    pilihan: ["Simpul", "Sisi", "Siklus", "Derajat"],
-    benar: 2,
-    alasan: "Pohon merentang bersifat asiklik."
-  },
-  {
-    soal: "Jika graf memiliki 7 simpul dan 6 sisi serta terhubung, maka graf tersebut?",
-    pilihan: ["Pohon", "Graf lengkap", "Graf siklik", "Graf berarah"],
-    benar: 0,
-    alasan: "Syarat pohon: terhubung dan sisi = n − 1."
-  },
-  {
-    soal: "Graf terhubung dengan n simpul dan lebih dari n−1 sisi pasti?",
-    pilihan: ["Pohon", "Tidak terhubung", "Memiliki siklus", "Graf trivial"],
-    benar: 2,
-    alasan: "Lebih dari n−1 sisi berarti ada siklus."
-  },
-  {
-    soal: "Pohon merentang diambil dari graf?",
-    pilihan: ["Tak terhubung", "Terhubung", "Kosong", "Berarah"],
-    benar: 1,
-    alasan: "Pohon merentang berasal dari graf terhubung."
-  },
-  {
-    soal: "Apakah setiap graf memiliki pohon merentang?",
-    pilihan: ["Ya", "Tidak", "Hanya graf terhubung", "Hanya graf lengkap"],
-    benar: 2,
-    alasan: "Hanya graf terhubung yang memiliki pohon merentang."
-  },
-  {
-    soal: "Pohon memiliki derajat minimum simpul?",
+    soal: "Derajat minimum simpul pada pohon (n > 1) adalah?",
     pilihan: ["0", "1", "2", "3"],
     benar: 1,
-    alasan: "Daun pohon memiliki derajat 1."
+    alasan: "Selalu ada simpul daun dengan derajat 1."
   },
   {
-    soal: "Simpul dengan derajat 1 pada pohon disebut?",
-    pilihan: ["Akar", "Cabang", "Daun", "Induk"],
-    benar: 2,
-    alasan: "Simpul berderajat 1 disebut daun."
-  },
-  {
-    soal: "Graf yang hanya memiliki satu simpul disebut?",
-    pilihan: ["Graf lengkap", "Graf trivial", "Graf siklik", "Graf planar"],
+    soal: "Pohon dengan semua simpul berderajat ≤ 2 disebut?",
+    pilihan: ["Pohon biner", "Lintasan", "Graf lengkap", "Graf siklik"],
     benar: 1,
-    alasan: "Graf trivial terdiri dari satu simpul."
+    alasan: "Pohon tersebut membentuk lintasan."
   },
-
-  // Soal 21–100 pola konsep (dipastikan valid)
+  {
+    soal: "Apakah pohon bisa berbentuk graf lengkap?",
+    pilihan: ["Bisa", "Tidak bisa", "Kadang-kadang", "Tergantung simpul"],
+    benar: 1,
+    alasan: "Graf lengkap memiliki banyak siklus."
+  },
+  {
+    soal: "Jika sebuah pohon memiliki 1 simpul, maka jumlah sisinya?",
+    pilihan: ["0", "1", "2", "Tidak terdefinisi"],
+    benar: 0,
+    alasan: "Graf trivial memiliki 0 sisi."
+  },
+  {
+    soal: "Pohon merentang memiliki jumlah sisi?",
+    pilihan: [
+      "Sama dengan graf asal",
+      "Lebih banyak",
+      "Lebih sedikit atau sama",
+      "Selalu n − 1"
+    ],
+    benar: 3,
+    alasan: "Pohon merentang selalu memiliki n − 1 sisi."
+  },
+  {
+    soal: "Menghapus satu sisi dari pohon akan membuat graf?",
+    pilihan: ["Siklik", "Tidak terhubung", "Lengkap", "Planar"],
+    benar: 1,
+    alasan: "Pohon sangat minimal, satu sisi hilang jadi terputus."
+  }
 ];
 
+/* ================================
+   TAMBAHAN SOAL OTOMATIS (SAMPAI 100)
+================================= */
 for (let i = soalList.length + 1; i <= 100; i++) {
   soalList.push({
-    soal: `Jika sebuah pohon memiliki ${i} simpul, berapakah jumlah sisinya?`,
+    soal: `Jika sebuah pohon memiliki ${i} simpul, berapa jumlah sisinya?`,
     pilihan: [`${i - 2}`, `${i - 1}`, `${i}`, `${i + 1}`],
     benar: 1,
     alasan: "Jumlah sisi pohon selalu n − 1."
   });
 }
 
-
 /* ================================
    VARIABEL GLOBAL
-   (MENYIMPAN 3 SOAL YANG DITAMPILKAN)
 ================================= */
 let soalTampil = [];
 
@@ -285,9 +309,7 @@ function acakSoal() {
   const soalAcak = [...soalList];
   soalAcak.sort(() => Math.random() - 0.5);
 
-  // SIMPAN 3 SOAL YANG DITAMPILKAN
   soalTampil = soalAcak.slice(0, 3);
-
   tampilSoal(soalTampil);
 }
 
@@ -301,7 +323,7 @@ function cekJawaban(index) {
   const hasil = document.getElementById(`hasil${index}`);
 
   if (!jawaban) {
-    hasil.innerHTML = "Pilih jawaban dulu ji 😅";
+    hasil.innerHTML = "Pilih jawaban dulu";
     return;
   }
 
