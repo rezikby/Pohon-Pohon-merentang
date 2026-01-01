@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pohon & Pohon Merentang</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">Pohon 🌿 Merentang</div>
+    <nav class="navbar">
+        <a href="#anggota">Anggota</a>
+        <a href="#kalkulator">Kalkulator</a>
+        <a href="#contoh-soal">Contoh Soal</a>
+        <a href="#materi-online">Materi</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Pohon & Pohon Merentang</h1>
+        <p>Kelompok 5 — Polman Babel</p>
+    </div>
+</section>
+
+<section class="anggota" id="anggota">
+    <h2>Anggota Kelompok</h2>
+    <div class="anggota-grid">
+        <div class="anggota-card">
+            <img src="samuel.png">
+            <h4>Samuel</h4>
+            <p>1062556</p>
+        </div>
+        <div class="anggota-card">
+            <img src="IMG_20251217_151023.jpg">
+            <h4>Rezi</h4>
+            <p>1062554</p>
+        </div>
+        <div class="anggota-card">
+            <img src="IMG_20251217_151339.jpg">
+            <h4>Rayhan</h4>
+            <p>1062552</p>
+        </div>
+    </div>
+</section>
+
+<section class="wrapper" id="kalkulator">
+
+<!-- kkltr -->
+    <div class="container-kalkulator">
+        <h2>Kalkulator Pohon</h2>
+
+        <label>Simpul (V)</label>
+        <input id="vertices" placeholder="a,b,c,d,e">
+
+        <label>Sisi (E)</label>
+        <input id="edges" placeholder="a-b,a-c,c-d,d-e">
+
+        <button onclick="cekPohon()">Cek Pohon</button>
+        <button onclick="cekPohonMerentang()">Cek Pohon Merentang</button>
+
+        <div id="hasil">Hasil: -</div>
+    </div>
+
+<!-- soal -->
+    <div class="soal-section" id="contoh-soal">
+        <h2>Contoh Soal</h2>
+        <div id="list-soal"></div>
+        <button onclick="acakSoal()">Acak Soal</button>
+    </div>
+
+</section>
+
+<section class="materi" id="materi-online">
+    <h2>Materi Video</h2>
+    <iframe src="https://www.youtube.com/embed/3wLrelP9L0Q" allowfullscreen></iframe>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
